@@ -1,0 +1,319 @@
+@import url('https://fonts.googleapis.com/css2?family=Krona+One&family=Mukta:wght@200;300;400;500;600;700;800&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
+
+
+* {
+    margin: 0;
+    padding: 0;
+    text-decoration: none;
+}
+
+
+body {
+    font-family: 'Poppins', sans-serif;
+    background-color: #000000;
+    color: #333;
+    text-align: center;
+}
+
+
+.presentation-header {
+    padding: 60px;
+    background-color: #1A202C; 
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.5);
+}
+
+h1 {
+    font-family: 'Krona One', sans-serif;
+    font-size: 48px;
+    color: #fff;
+    line-height: 1.5;
+}
+
+
+.highlight-title {
+    font-weight: bold;
+    color: #3A7A8A; 
+}
+
+.highlight-color1 {
+    font-weight: bold;
+    color: #084D61; 
+}
+
+.highlight-color2 {
+    font-weight: bold;
+    color: #0A4A58;
+}
+
+.content {
+    padding: 40px 20px;
+    max-width: 800px;
+    margin: 0 auto;
+    background-color: #282b2d; 
+    border-radius: 10px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.5);
+    margin-bottom: 30px;
+}
+
+/* Texto Principal */
+.main-text {
+    font-size: 20px;
+    line-height: 1.8;
+    margin-bottom: 20px;
+    color: #f2f2f2; 
+}
+
+.bold-text {
+    font-weight: bold;
+}
+
+.highlight-color3 {
+    font-weight: bold;
+    color: #ca0300; 
+}
+
+.highlight-color4 {
+    font-weight: bold;
+    color: #0A8B21; 
+}
+
+.highlight-color5 {
+    font-weight: bold;
+    color: #B38929; 
+}
+
+/* Subtexto */
+.subtext {
+    font-size: 20px;
+    line-height: 1.8;
+    margin-bottom: 20px;
+    color: #f2f2f2; 
+}
+
+@keyframes fadeIn {
+    0% {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+    100% {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+.fade-in {
+    animation: fadeIn 1.5s ease-out forwards;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+.hamburger {
+    position: fixed;
+    top: 20px;
+    left: 20px;
+    cursor: pointer;
+    z-index: 2;
+}
+
+.hamburger .bar {
+    width: 35px;
+    height: 5px;
+    background-color: #fff;
+    margin: 6px 0;
+    transition: 0.4s;
+}
+
+.sidebar {
+    position: fixed;
+    top: 0;
+    left: -500px; 
+    height: 100%;
+    width: 500px;
+    background: linear-gradient(135deg, #1e3c72, #2a5298); 
+    color: white;
+    transition: transform 0.5s ease-in-out, opacity 0.5s ease-in-out;
+    opacity: 0;
+    display: flex;
+    flex-direction: column;
+    padding-top: 60px;
+    z-index: 1;
+    overflow-y: auto; 
+}
+
+.hamburger:hover + .sidebar,
+.sidebar:hover {
+    transform: translateX(500px); 
+    opacity: 1;
+    transition-delay: 0s;
+}
+
+.sidebar {
+    transition-delay: 0s, 1.5s;
+}
+
+.sidebar-content {
+    padding: 20px;
+    animation: fadeInContent 0.5s ease forwards;
+}
+
+.sidebar-content ul {
+    list-style-type: none;
+    padding: 0;
+    margin: 0;
+}
+
+.sidebar-content ul li {
+    padding: 20px 0;
+    text-align: center;
+    opacity: 0;
+    animation: slideInLinks 0.5s ease forwards;
+    animation-delay: 0.5s;
+}
+
+.sidebar-content ul li a {
+    color: white;
+    text-decoration: none;
+    font-size: 22px;
+    font-weight: bold;
+    letter-spacing: 1px;
+    display: block;
+    padding: 15px 30px;
+    border-radius: 30px;
+    position: relative;
+    overflow: hidden;
+    transition: all 0.3s ease;
+    opacity: 0;
+    animation: linkFadeIn 0.6s ease forwards; 
+    animation-delay: 0.7s; 
+}
+
+.sidebar-content ul li a:hover {
+    background-color: #4a90e2; 
+    color: white;
+    transform: scale(1.05); 
+    box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.2); 
+    transition: all 0.3s ease;
+}
+
+.sidebar-content ul li a:before {
+    content: '';
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    width: 300%;
+    height: 300%;
+    background-color: #4a90e2;
+    transition: all 0.4s;
+    border-radius: 50%;
+    opacity: 0;
+    transform: translate(-50%, -50%);
+}
+
+.sidebar-content ul li a:hover:before {
+    width: 0;
+    height: 0;
+    opacity: 0.1;
+}
+
+@keyframes fadeInContent {
+    from {
+        opacity: 0;
+        transform: translateY(30px); 
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+@keyframes slideInLinks {
+    from {
+        opacity: 0;
+        transform: translateY(30px); 
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+@keyframes linkFadeIn {
+    from {
+        opacity: 0;
+        transform: translateY(20px); 
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
